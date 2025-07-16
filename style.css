@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Barrio&family=DM+Serif+Text:ital@0;1&family=DynaPuff:wght@400..700&family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Shadows+Into+Light&family=Slackey&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    45deg,
+    #1c1c1c,
+    #3a4046,
+    #5a6670,
+    #a88e2c,
+    #e9c822
+  );
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  animation: coloranimation 5s ease-in-out infinite;
+  font-family: "dynapuff", cursive;
+}
+h1 {
+  margin-bottom: 2rem;
+  font-size: 50px;
+}
+
+@keyframes coloranimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body h1 {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  animation: titleflutuando 3s ease-in-out infinite;
+}
+
+@keyframes titleflutuando {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px); /* Sobe 10px */
+  }
+  100% {
+    transform: translateY(0px); /* Volta para posição inicial */
+  }
+}
+
+.boxprincipal {
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boxprincipal .icones {
+  font-size: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  margin-left: 3rem;
+  gap: 30px;
+}
+
+.boxsecundaria {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  width: 70%;
+  height: 400px;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.inputgroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-right: 1rem;
+}
+
+.inputgroup input {
+  padding: 10px 10px;
+  width: 340px;
+  border-radius: 15px;
+  border: none;
+  color: #1c1c1c;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.boxsecundaria button {
+  padding: 15px 40px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(45deg, #a88e2c, #e9c822, #5a6670);
+  background-size: 200% 200%;
+  margin-top: 1rem;
+}
+
+.boxsecundaria button:hover {
+  transform: scale(1.2);
+}
+
+.boxinput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 5rem;
+}
+
+.mensagem-sucesso {
+  color: green;
+  position: absolute;
+  top: 670px;
+  right: 38%;
+  z-index: 3;
+}
+
+@media (max-width: 480px) {
+  .boxprincipal {
+    flex-direction: column;
+    width: 100%;
+    height: 70%; /* libera altura para evitar estouro */
+    padding: 15px;
+  }
+
+  .boxprincipal .icones {
+    font-size: 80px;
+    margin-left: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 15px;
+    width: 100%; /* ocupa toda a largura no celular */
+  }
+
+  .boxsecundaria {
+    width: 100%;
+    height: 80%; /* importante para o conteúdo fluir */
+    margin-right: 0;
+    padding: 15px 20px;
+  }
+
+  .inputgroup {
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .inputgroup input {
+    width: 90%;
+  }
+
+  .boxsecundaria button {
+    width: 90%;
+    padding: 15px 0;
+    margin-bottom: 1rem;
+  }
+
+  .boxsecundaria button:hover {
+    transform: scale(0.9);
+  }
+
+  .mensagem-sucesso {
+    bottom: 15px;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 12px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+}
