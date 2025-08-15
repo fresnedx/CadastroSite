@@ -15,4 +15,8 @@ if ($conn->connect_error) {
 }
 
 //echo "Conectado com sucesso!";
+
 ?>
+
+
+//ESSE BANCO NÃO EXISTE, SOMENTE PARA USO DE PORTFOLIO
